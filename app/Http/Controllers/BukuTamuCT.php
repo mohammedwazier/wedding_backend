@@ -13,7 +13,7 @@ class BukuTamuCT extends Controller
 {
     public function GetBukuTamu(Request $req, String $wedding_code)
     {
-        return BukuTamu::where('wedding_code', $wedding_code)->paginate();
+        return BukuTamu::where('wedding_code', $wedding_code)->orderBy('created_at', 'DESC')->paginate();
     }
     
     public function InsertBukuTamu(Request $req)
